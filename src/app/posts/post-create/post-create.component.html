@@ -1,0 +1,33 @@
+<!-- <textarea rows="5" class="mb-2 w-100" [(ngModel)]="enteredValue"></textarea>
+<button class="btn btn-primary mb-5" (click)="onAddPost()">Save</button>
+<p class="p-2 border">{{newPost}}</p> -->
+
+<!-- <div class="form-group mb-2">
+    <input type="text" class="form-control" [(ngModel)]="enteredTitle" placeholder="Title here" />
+</div>
+<div class="form-group mb-2"> <textarea class="form-control" [(ngModel)]="enteredContent" placeholder="Description here"></textarea></div>
+<div class="form-group mb-2"> <button class="btn btn-primary mb-5" (click)="onAddPost()">Save</button></div>
+ -->
+<form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <div class="form-group mb-2">
+        <input type="text" class="form-control"  placeholder="Title here"
+        name="title"
+        ngModel
+        required
+        placeholder="Post Title"
+        minlength="3"
+        #title="ngModel" />
+    </div>
+    <!-- <div class="error" *ngIf="postForm.getControl(title).invalid"></div> -->
+    <div class="alert alert-danger" *ngIf="title.invalid">Please enter post title</div>
+    <div class="form-group mb-2"> <textarea class="form-control" 
+            placeholder="Description here"
+            name="content"
+            ngModel
+            required
+            placeholder="Post Content"
+            #content="ngModel"
+            ></textarea></div>
+            <div class="alert alert-danger" *ngIf="content.invalid">Please enter post content</div>
+    <div class="form-group mb-2"> <button class="btn btn-primary mb-5">Save</button></div>
+</form>
