@@ -1,3 +1,6 @@
+When run this project in your system, You should intsall node.
+otherwise you can add your node module files in node_modules folder
+
 # AngularPractice
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
